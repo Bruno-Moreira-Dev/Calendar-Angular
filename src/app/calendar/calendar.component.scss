@@ -1,0 +1,25 @@
+@import "../../scss/variables";
+
+.calendar {
+  &-content {
+    display: flex;
+  }
+
+  &-form-fields {
+    border-right: 1px solid #e3e3e3;
+    padding: 10px;
+  }
+
+  &-adjust-button {
+    margin: 8px 0 8px;
+  }
+
+  &-card {
+    margin-top: 20px;
+    margin-left: 35vh;
+  }
+}
+
+.mat-calendar {
+  width: 26vw;
+}

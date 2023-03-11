@@ -1,0 +1,25 @@
+<div *ngIf="tasks.length > 0" class="task">
+  <h4>Appointments</h4>
+  <div cdkDropList (cdkDropListDropped)="drop($event)" cellspacing="0" class="task-content">
+    <mat-card *ngFor="let task of tasks" class="task-card" cdkDrag>
+      <mat-form-field class="task-input">
+        <mat-label>Title</mat-label>
+        <input matInput [value]="task.title">
+      </mat-form-field>
+      <mat-form-field class="task-input">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" [value]="task.date" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div class="task-adjust-button">
+        <button mat-mini-fab matTooltip="Delete task" color="warn" (click)="onDeleteTask(task.title)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

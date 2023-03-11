@@ -1,0 +1,26 @@
+<header>
+  <app-header></app-header>
+</header>
+<main class="calendar">
+  <div class="calendar-container">
+    <div class="calendar-content">
+      <div class="calendar-form-fields">
+        <div class="calendar-adjust-button">
+          <button mat-fab extended color="primary" (click)="openTaskDialog()">
+            <mat-icon>add</mat-icon>
+            Create New Task
+          </button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <mat-card class="calendar-card">
+            <mat-calendar [selected]="selectedDate"
+              (selectedChange)="onSelectDateChanged($event)"></mat-calendar>
+          </mat-card>
+        </div>
+        <app-task-list [tasks]="tasks"></app-task-list>
+      </div>
+    </div>
+  </div>
+</main>

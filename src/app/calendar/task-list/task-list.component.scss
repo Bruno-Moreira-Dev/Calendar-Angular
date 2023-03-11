@@ -1,0 +1,31 @@
+@import "../../../scss/variables";
+
+.task {
+  margin-top: 10px;
+  margin-left: 20px;
+
+  &-content {
+    max-height: 30vh;
+    overflow: auto;
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  &-input {
+    width: 100%;
+  }
+
+  &-adjust-button {
+    display: flex;
+  }
+}
+
+td {
+  padding-right: 8px;
+}

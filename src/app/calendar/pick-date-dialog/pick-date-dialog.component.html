@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Create a task</h2>
+<form [formGroup]="datePickerForm">
+  <mat-dialog-content class="mat-typography">
+    <div>
+      <mat-form-field class="example-form-field">
+        <mat-label>Add the title</mat-label>
+        <input matInput type="text" formControlName="title">
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="clearTitleField()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="date"
+          (dateChange)="onDateChange($event)"
+        />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-raised-button color="primary" cdkFocusInitial (click)="onSetTask(datePickerForm)">Save</button>
+  </mat-dialog-actions>
+</form>
